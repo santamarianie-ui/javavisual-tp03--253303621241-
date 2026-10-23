@@ -42,15 +42,49 @@ Menghitung jumlah karakter berdasarkan tipe tertent
 Tuliskan paragraf berikut pada berkas README.md Anda untuk menjelaskan rasionalitas perancangan fitur tersebut:
 
 Markdown
-### Rasionalitas Rancangan Fitur Analitik / Kustom (Bagian C)
+Rasionalitas Rancangan Fitur Analitik / Kustom (Bagian C)
 
-1. **Rasionalitas Bisnis & Fitur (`renameCharacter`)**:
+1. Rasionalitas Bisnis & Fitur (`renameCharacter`):
    Dalam game/aplikasi berbasis karakter, fitur mengubah nama (*rename*) adalah kebutuhan umum. Namun, perubahan nama tidak boleh merusak aturan keunikan (*uniqueness constraint*). Method `renameCharacter` dirancang untuk memvalidasi keberadaan karakter target serta memastikan bahwa `newName` belum terdaftar pada karakter lain (mencegah bentrok nama duplikat).
 
-2. **Penerapan Encapsulation**:
+2. Penerapan Encapsulation:
    - Method ini mengendalikan mutasi atribut secara penuh di dalam enkapsulasi `CharacterManager`.
    - Method tidak pernah mengembalikan atau menerima koleksi `ArrayList` internal.
-   - Apabila menggunakan method pencarian seperti `findStrongest()`, pengembalian nilai dilakukan menggunakan **Defensive Copy** (`new Character(strongest)`), sehingga pihak luar (*caller*) tidak mendapatkan pointer/referensi langsung ke objek di dalam memori internal `CharacterManager`. Perubahan atribut pada objek hasil return tidak akan merusak data di dalam manager.
+   - Apabila menggunakan method pencarian seperti `findStrongest()`, pengembalian nilai dilakukan menggunakan **Defensive Copy (`new Character(strongest)`), sehingga pihak luar (*caller*) tidak mendapatkan pointer/referensi langsung ke objek di dalam memori internal `CharacterManager`. Perubahan atribut pada objek hasil return tidak akan merusak data di dalam manager.
 
 Bagian D — Analisis Reference & Rancangan (Google Docs) 
 https://1drv.ms/b/c/251df1b2271152b7/IQDEDFv0eVXHSIcTdV_Gs-VhAZ9Z8qvlclvV6vV4gejI-7g?e=pPGxiY
+
+
+Character Manager Sprint #3 MainWindow, Data Dinamis & Analisis MVC TP03
+Cok, ini pengertian TP08 yang bisa kau masukkan ke dalam `README.md` bagian pendahuluan. ❤️
+
+### Pengertian TP08 — Implementasi GUI dan Analisis MVC
+Graphical User Interface (GUI) menggunakan Java Swing serta pemahaman konsep Model-View-Controller (MVC). Pada tugas ini, program Character Manager yang sebelumnya dijalankan melalui console dikembangkan menjadi aplikasi berbasis jendela interaktif yang menampilkan data karakter secara dinamis. Selain itu, tugas ini mencakup penambahan karakter baru, perhitungan statistik rata-rata level, serta penerapan `SwingUtilities.invokeLater()` untuk menjalankan GUI pada thread yang sesuai. Melalui TP08, mahasiswa diharapkan mampu memahami pemisahan tanggung jawab antara pengelolaan data, tampilan antarmuka, dan alur kerja aplikasi.
+<img width="854" height="398" alt="Screenshot 2026-10-23 235249" src="https://github.com/user-attachments/assets/85109970-ced1-446c-b380-b8b1976974cd" />
+src
+└── com
+    └── unpri
+        └── charactermanager
+            ├── Main.java
+            ├── model
+            │   ├── Character.java
+            │   ├── CharacterManager.java
+            │   └── CharacterType.java
+            └── view
+                └── MainWindow.java
+
+2. Aliran Data dan Konsep MVC
+Program dimulai dari `Main.java`, yang membuat objek `CharacterManager` dan menambahkan data karakter ke dalamnya. Selanjutnya, objek `CharacterManager` diberikan kepada `MainWindow` agar daftar karakter dapat ditampilkan secara dinamis melalui komponen `JLabel`. Dalam konsep MVC, `Character` dan `CharacterManager` berperan sebagai Model, sedangkan `MainWindow` berperan sebagai View yang bertanggung jawab menampilkan data kepada pengguna. `Main.java` mengatur inisialisasi aplikasi dan menampilkan jendela menggunakan `SwingUtilities.invokeLater()`.
+3. Karakter Baru dan Alasan Pemilihan
+
+| Nama | Tipe | Level | Alasan Pemilihan |
+|---|---|---:|---|
+| Luna | HEALER | 6 | Mewakili karakter pendukung yang berfokus pada pemulihan dan memiliki variasi peran. |
+| Bima | WARRIOR | 8 | Mewakili karakter petarung dengan level lebih tinggi untuk menunjukkan variasi level karakter. |
+
+Penambahan Luna dan Bima membuat aplikasi memiliki lima karakter dengan tipe dan level yang bervariasi.
+
+4. Dokumentasi Analisis GUI dan MVC
+
+Dokumen Google Docs Bagian D: https://1drv.ms/b/c/251df1b2271152b7/IQDbopTQA6o0TomgWWKhvZvJAc8tDxn3JBCgbx3WMEovtIM?e=tfIgD8
