@@ -88,3 +88,16 @@ Penambahan Luna dan Bima membuat aplikasi memiliki lima karakter dengan tipe dan
 4. Dokumentasi Analisis GUI dan MVC
 
 Dokumen Google Docs Bagian D: https://1drv.ms/b/c/251df1b2271152b7/IQDbopTQA6o0TomgWWKhvZvJAc8tDxn3JBCgbx3WMEovtIM?e=tfIgD8
+
+Character Manager Sprint #4 Theming, Properti Komponen & Analisis MVC
+Screenshoot sesudah (v0.4 - AppTheme)
+<img width="759" height="473" alt="Screenshot 2026-10-28 173539" src="https://github.com/user-attachments/assets/b3a59345-b8ff-4876-9b73-125ce8f29033" />
+screenshoot masih (v0.3 - App Theme)
+<img width="788" height="441" alt="Screenshot 2026-10-28 173115" src="https://github.com/user-attachments/assets/8ed9c970-f6a5-4391-950e-232c7b7bafdb" />
+
+Pada bagian ini, aplikasi Character Manager dikembangkan dengan menambahkan fitur penanda level tinggi. Karakter yang memiliki level minimal 5 akan ditampilkan menggunakan teks berwarna emas dan tebal. Batas level disimpan dalam konstanta HIGH_LEVEL_THRESHOLD agar mudah diatur.
+
+Selain itu, jumlah karakter ditambahkan menjadi minimal 6 dengan variasi role dan level. Dua properti tambahan juga diterapkan, yaitu tooltip untuk menampilkan informasi HP dan ATK serta border emas untuk karakter dengan level tinggi.
+
+Sebagai bukti pengembangan, disertakan screenshot sebelum (v0.3) dan sesudah (v0.4). Perubahan juga dilakukan secara bertahap melalui commit GitHub untuk menunjukkan proses pengerjaan aplikasi.
+Dokumen Google Docs Bagian D: https://1drv.ms/b/c/251df1b2271152b7/IQBoXvXcTlMYRKOfSt3kbU5ZAW36omJbhIbst6hcX-5EPMg?e=jHECeU
